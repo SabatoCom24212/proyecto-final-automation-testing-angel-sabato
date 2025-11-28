@@ -1,0 +1,52 @@
+{
+  "usuarios_validos": [
+    {
+      "username": "standard_user",
+      "password": "secret_sauce",
+      "description": "Usuario estándar"
+    }
+  ],
+  "usuarios_invalidos": [
+    {
+      "username": "usuario_inexistente",
+      "password": "password_incorrecta",
+      "expected_error": "Username and password do not match"
+    },
+    {
+      "username": "",
+      "password": "",
+      "expected_error": "Username is required"
+    }
+  ],
+  "checkout_info": [
+    {
+      "first_name": "Usuario",
+      "last_name": "DePrueba1",
+      "postal_code": "5645"
+    },
+    {
+      "first_name": "Usuario",
+      "last_name": "DePrueba2",
+      "postal_code": "9012"
+    },
+    {
+      "first_name": "Usuario",
+      "last_name": "DePrueba3",
+      "postal_code": "1846"
+    }
+  ],
+  "productos": [
+    {
+      "id": "add-to-cart-sauce-labs-backpack",
+      "nombre": "Sauce Labs Backpack"
+    },
+    {
+      "id": "add-to-cart-sauce-labs-bike-light",
+      "nombre": "Sauce Labs Bike Light"
+    },
+    {
+      "id": "add-to-cart-sauce-labs-bolt-t-shirt",
+      "nombre": "Sauce Labs Bolt T-Shirt"
+    }
+  ]
+}
