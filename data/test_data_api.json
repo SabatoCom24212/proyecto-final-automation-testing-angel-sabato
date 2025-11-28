@@ -1,0 +1,247 @@
+{
+  "todos_para_crear": [
+    {
+      "userId": 1,
+      "title": "Completar los cuestionarios del aula virtual",
+      "completed": false
+    },
+    {
+      "userId": 2,
+      "title": "Revisar la bibliografía del curso",
+      "completed": false
+    },
+    {
+      "userId": 3,
+      "title": "Actualizar las dependencias del proyecto",
+      "completed": true
+    }
+  ],
+  "posts_para_crear": [
+    {
+      "userId": 1,
+      "title": "Curso de Automatización de Pruebas",
+      "body": "La automatización de pruebas es fundamental para garantizar la calidad del software en ciclos de desarrollo ágiles. Permite ejecutar casos de prueba de manera repetible y consistente."
+    },
+    {
+      "userId": 5,
+      "title": "Mejores prácticas en CI/CD",
+      "body": "Implementar pipelines de integración continua ayuda a detectar errores tempranamente. Es importante incluir tests automatizados en cada etapa del pipeline."
+    },
+    {
+      "userId": 3,
+      "title": "Page Object Model explicado",
+      "body": "El patrón Page Object Model mejora la mantenibilidad de los tests UI al encapsular la lógica de interacción con las páginas en clases reutilizables."
+    }
+  ],
+  "usuarios_para_crear": [
+    {
+      "name": "Usuario DePruebaAPI",
+      "username": "usuarioapi",
+      "email": "usuarioapi@testmail.com",
+      "address": {
+        "street": "Av. Cabildo",
+        "suite": "Piso 5",
+        "city": "Buenos Aires",
+        "zipcode": "C1425",
+        "geo": {
+          "lat": "-34.5435",
+          "lng": "-58.6010"
+        }
+      },
+      "phone": "+54-11-4547-8300",
+      "website": "usuarioapi.dev",
+      "company": {
+        "name": "API Solutions",
+        "catchPhrase": "Innovación en testeo de APIs",
+        "bs": "software development and QA"
+      }
+    },
+    {
+      "name": "Usuario DePruebaAPI2",
+      "username": "usuarioprueba2",
+      "email": "usuarioprueba2@testmail.com",
+      "address": {
+        "street": "Calle Fitz Roy",
+        "suite": "Oficina 12",
+        "city": "Buenos Aires",
+        "zipcode": "C1043",
+        "geo": {
+          "lat": "-34.6037",
+          "lng": "-58.3816"
+        }
+      },
+      "phone": "+54-11-3278-9045",
+      "website": "usuarioapidos.dev",
+      "company": {
+        "name": "QA Experts",
+        "catchPhrase": "Calidad garantizada",
+        "bs": "quality assurance services"
+      }
+    }
+  ],
+  "comentarios_para_crear": [
+    {
+      "postId": 1,
+      "name": "Excelente artículo",
+      "email": "reviewer@testmail.com",
+      "body": "Muy buen contenido, explica claramente los conceptos fundamentales de testing automatizado."
+    },
+    {
+      "postId": 1,
+      "name": "Pregunta sobre implementación",
+      "email": "developer@testmail.com",
+      "body": "¿Podrías compartir ejemplos de código para implementar estos patrones en proyectos reales?"
+    }
+  ],
+  "actualizaciones_parciales": [
+    {
+      "tipo": "todo",
+      "id": 1,
+      "campos": {
+        "completed": true
+      },
+      "descripcion": "Marcar TODO como completado"
+    },
+    {
+      "tipo": "post",
+      "id": 1,
+      "campos": {
+        "title": "Introducción a Test Automation - Actualizado"
+      },
+      "descripcion": "Actualizar título del post"
+    },
+    {
+      "tipo": "user",
+      "id": 1,
+      "campos": {
+        "email": "nuevo.email@testmail.com",
+        "phone": "+54-11-9999-8888"
+      },
+      "descripcion": "Actualizar email y teléfono"
+    }
+  ],
+  "actualizaciones_completas": [
+    {
+      "tipo": "todo",
+      "id": 1,
+      "datos": {
+        "userId": 1,
+        "id": 1,
+        "title": "TODO completamente actualizado",
+        "completed": true
+      }
+    },
+    {
+      "tipo": "post",
+      "id": 1,
+      "datos": {
+        "userId": 1,
+        "id": 1,
+        "title": "Post reescrito completamente",
+        "body": "Este es un contenido completamente nuevo para el post. Se ha reemplazado toda la información anterior para simular una actualización completa."
+      }
+    }
+  ],
+  "datos_invalidos": [
+    {
+      "tipo": "todo_sin_campos_requeridos",
+      "datos": {
+        "completed": false
+      },
+      "expected_behavior": "Debería crearse con valores por defecto o fallar"
+    },
+    {
+      "tipo": "post_campos_vacios",
+      "datos": {
+        "userId": 1,
+        "title": "",
+        "body": ""
+      },
+      "expected_behavior": "Debería validar campos no vacíos"
+    },
+    {
+      "tipo": "user_email_invalido",
+      "datos": {
+        "name": "Test User",
+        "email": "email-invalido",
+        "username": "testuser"
+      },
+      "expected_behavior": "Debería validar formato de email"
+    }
+  ],
+  "escenarios_edge_case": [
+    {
+      "nombre": "TODO con título muy largo",
+      "tipo": "todo",
+      "datos": {
+        "userId": 1,
+        "title": "Este es un título extremadamente largo que contiene más de 200 caracteres para probar el límite máximo permitido por la API y verificar cómo maneja el sistema este tipo de datos extensos que podrían causar problemas en la base de datos o en la visualización",
+        "completed": false
+      }
+    },
+    {
+      "nombre": "Post con caracteres especiales",
+      "tipo": "post",
+      "datos": {
+        "userId": 1,
+        "title": "Test con símbolos: @#$%^&*()[]{}|\\<>?",
+        "body": "Contenido con caracteres Unicode: áéíóú ñ ü"
+      }
+    },
+    {
+      "nombre": "Usuario con datos mínimos",
+      "tipo": "user",
+      "datos": {
+        "name": "U",
+        "username": "u",
+        "email": "a@b.c"
+      }
+    }
+  ],
+  "recursos_para_eliminar": [
+    {
+      "tipo": "todo",
+      "id": 1,
+      "expected_status": 200,
+      "descripcion": "Eliminar TODO existente"
+    },
+    {
+      "tipo": "post",
+      "id": 1,
+      "expected_status": 200,
+      "descripcion": "Eliminar POST existente"
+    },
+    {
+      "tipo": "user",
+      "id": 1,
+      "expected_status": 200,
+      "descripcion": "Eliminar USER existente"
+    },
+    {
+      "tipo": "todo_inexistente",
+      "id": 99999,
+      "expected_status": 200,
+      "descripcion": "JSONPlaceholder retorna 200 incluso para recursos inexistentes"
+    }
+  ],
+  "recursos_inexistentes_get": [
+    {
+      "tipo": "todo",
+      "id": 99999,
+      "expected_status": 404,
+      "descripcion": "GET de TODO inexistente debe retornar 404"
+    },
+    {
+      "tipo": "post",
+      "id": 99999,
+      "expected_status": 404,
+      "descripcion": "GET de POST inexistente debe retornar 404"
+    },
+    {
+      "tipo": "user",
+      "id": 99999,
+      "expected_status": 404,
+      "descripcion": "GET de USER inexistente debe retornar 404"
+    }
+  ]
+}
