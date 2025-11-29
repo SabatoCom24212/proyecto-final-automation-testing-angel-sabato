@@ -74,6 +74,7 @@ automation-framework/
 │   └── api/
 │       ├── conftest.py             # Fixtures: api_client con métodos HTTP
 │       └── test_api.py             # +20 tests API en 8 clases
+├── conftest.py                     # Para que pytest detecte fixtures globales
 ├── pages.py                        # Page Objects: BasePage, LoginPage, InventoryPage, CartPage, CheckoutPage
 ├── utils.py                        # TestLogger, Config, DataLoader, helpers (screenshot, limpieza)
 ├── requirements.txt                # Dependencias del proyecto
